@@ -23,4 +23,4 @@ public class HashtagController {
     public List<Hashtags> findAll() {
       return hashtagDao.findAll();
     }
-}
+} // end controller
