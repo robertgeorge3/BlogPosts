@@ -20,7 +20,7 @@ public class PostController {
         return postRepository.findAll();
     }
 
-// rob smells bad
+
 
     @GetMapping("/Test2")
     public Posts findID(){
