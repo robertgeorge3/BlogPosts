@@ -31,4 +31,4 @@ public class PostController {
         return postRepository.count();
     }
 
-}
+}   // End class
