@@ -41,7 +41,7 @@ public class PostController {
         System.out.println(description);
         Posts post = new Posts(description);
         postRepository.save(post);
-        return "Index.html";
+        return "redirect:/getPosts";
     }
 
 
