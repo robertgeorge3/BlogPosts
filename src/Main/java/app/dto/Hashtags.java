@@ -18,4 +18,28 @@ public class Hashtags {
     // Should handle or be necessary for the bridge table
     @ManyToMany(mappedBy = "usedHashtags")
     public List<Posts> inPosts;
+
+    public int getHashtagid() {
+        return hashtagid;
+    }
+
+    public void setHashtagid(int hashtagid) {
+        this.hashtagid = hashtagid;
+    }
+
+    public String getPhrase() {
+        return phrase;
+    }
+
+    public void setPhrase(String phrase) {
+        this.phrase = phrase;
+    }
+
+    public List<Posts> getInPosts() {
+        return inPosts;
+    }
+
+    public void setInPosts(List<Posts> inPosts) {
+        this.inPosts = inPosts;
+    }
 }

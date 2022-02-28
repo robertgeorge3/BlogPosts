@@ -86,17 +86,20 @@ public class HashtagController {
         for (String phrase : hashtags) {
             // check if it exists
             if (hashtagDao.existsHashtagByPhrase(phrase)){
-                // if yes, continue
-                continue;
+                // get object and add to arraylist
+                //Hashtags hashtagobject = hashtagDao.getHashtagByPhrase(phrase);
+                //hashtagslist.add(hashtagobject);
             // if no, add to DB
             }   // end of if
             else {
                 Hashtags hashtag = new Hashtags(phrase);
                 hashtagDao.save(hashtag);
-
+                // get object and add to arraylist
+                //hashtagslist.add(hashtagDao.getHashtagByPhrase(phrase));
             }   // end of else
+
             // get object and add to arraylist
-            hashtagslist.add(hashtagDao.getHashtagByPhrase(phrase));
+            //hashtagslist.add(hashtagDao.getHashtagByPhrase(phrase));
 
         }   // End of for each loop
         return hashtagslist;
