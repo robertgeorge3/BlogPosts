@@ -17,5 +17,5 @@ public class Hashtags {
 
     // Should handle or be necessary for the bridge table
     @ManyToMany(mappedBy = "usedHashtags")
-    private List<Posts> inPosts;
+    public List<Posts> inPosts;
 }

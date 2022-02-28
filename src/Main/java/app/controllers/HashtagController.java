@@ -62,8 +62,8 @@ public class HashtagController {
             Character firstChar = word.charAt(0);
 
             // check for #
-            if (firstChar.equals("#")) {
-                word = word.replace("#","");    // eliminates #
+            if (firstChar.equals('#')) {
+                word = word.substring(1);    // eliminates #
                 word = word.trim(); // eliminates leading and trailing spaces
                 hashtags.add(word); // add hashtag to arraylist
             }   //End of if
