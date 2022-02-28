@@ -15,12 +15,15 @@ public class IndexController {
     @PostMapping("/addPassword")
     public String getPassword(String password, Model model) {
         if (password.equals("Hello123")) {
-            return "blog.html";
+            return "BlogEditor.html";
         } else {
             model.addAttribute("incorrectPassword", "Password incorrect. Try again.");
-            return "index.html";
+            return "Index.html";
         }
     }
-
+    @PostMapping("/toBlog")
+    public String toBlog(){
+        return "MyBlog.html";
+    }
 
 }
