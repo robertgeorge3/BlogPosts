@@ -32,6 +32,15 @@ public class PostController {
         return "MyBlog.html";
     }
 
+    @GetMapping("enterNewPost")
+    public String newPost(String description) {
+        System.out.println(description);
+        Posts post = new Posts(description);
+        postRepository.save(post);
+        return "Index.html";
+    }
+
+
     @GetMapping("/Test3")
     public long find(){
         return postRepository.count();

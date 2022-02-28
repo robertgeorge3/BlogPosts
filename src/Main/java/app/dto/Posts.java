@@ -22,6 +22,10 @@ public class Posts {
 
     protected Posts(){}
 
+    public Posts(String content){
+        this.content = content;
+    }
+
     @ManyToMany
     @JoinTable(name = "posts_hashtags",
             joinColumns = {@JoinColumn(name = "postid")},
