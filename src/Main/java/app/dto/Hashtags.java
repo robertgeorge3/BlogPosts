@@ -11,5 +11,6 @@ public class Hashtags {
     @Column(nullable = false)
     private String phrase;
 
-
+    public Hashtags(String phrase){this.phrase = phrase;
+    }   // end of constructor
 }

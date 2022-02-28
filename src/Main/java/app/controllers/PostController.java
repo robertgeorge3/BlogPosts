@@ -16,8 +16,12 @@ public class PostController {
     @Autowired
     PostRepository postRepository;
 
+    @Autowired
+    HashtagController hashController;
+
     @RequestMapping("/")
     public String begin(){
+        hashController.startUp();
         return "Index.html";
     }
 
