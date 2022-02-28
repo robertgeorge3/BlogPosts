@@ -22,6 +22,7 @@ public class HashtagController {
         this.hashtagDao = hashtagDao;
     }
 
+
     @GetMapping("findall")
     public List<Hashtags> findAll() {
       return hashtagDao.findAll();

@@ -15,14 +15,17 @@
 </head>
 <body>
 </div><div class="col-7 text-center m-3">
-    <form action="addHero" method="POST">
+    <form action="addPassword" method="POST">
         <div class="form-group row">
-            <label for="enterPassword" class="col-3 col-form-label">
+            <label for="password" class="col-3 col-form-label">
                 Enter Password</label>
             <div class="col-9">
-                <input type="text" name="superName"
-                       id="enterPassword" class="form-control"/>
+                <input type="text" name="password"
+                       id="password" class="form-control"/>
             </div>
+            <p th:text =${incorrectPassword}>
+                <center></center>
+            </p>
         </div>
     </form>
 </div>
