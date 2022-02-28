@@ -70,18 +70,18 @@ public class HashtagController {
         }   // End of for loop
 
         // check hashtag table and add if new
-        ArrayList<Integer> hashIds = checkHash(hashtags);
+        ArrayList<Hashtags> hashtagslist = checkHash(hashtags);
 
         // create bridge table entry
-        addPostHash(post, hashIds);
+        addPostHash(post, hashtagslist);
 
         // return array of hashtags
         return hashtags;
     }
     // For each hashtag in list, check-add to hashtag table
-    public ArrayList<Integer> checkHash(ArrayList<String> hashtags){
+    public ArrayList<Hashtags> checkHash(ArrayList<String> hashtags){
         // create arraylist to hold hashIds
-        ArrayList<Integer> hashIds = new ArrayList<Integer>();
+        ArrayList<Hashtags> hashtagslist = new ArrayList<Hashtags>();
 
         for (String phrase : hashtags) {
             // check if it exists
@@ -95,16 +95,16 @@ public class HashtagController {
                 hashtagDao.save(hashtag);
 
             }   // end of else
-            // get id and add to arraylist
-
+            // get object and add to arraylist
+            hashtagslist.add(hashtagDao.getHashtagByPhrase(phrase));
 
         }   // End of for each loop
-        return hashIds;
+        return hashtagslist;
     }   // End of checkHash
 
     // Add postid + each hashtagid to bridge table
-    public void addPostHash(Posts post, ArrayList<Integer> hashIds){
-
+    public void addPostHash(Posts post, ArrayList<Hashtags> hashtagslist){
+        post.setUsedHashtags(hashtagslist);
     }   // End of addPostHash
 
 } // end controllers

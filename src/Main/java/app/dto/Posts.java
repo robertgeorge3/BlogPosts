@@ -30,7 +30,13 @@ public class Posts {
     @JoinTable(name = "posts_hashtags",
             joinColumns = {@JoinColumn(name = "postid")},
             inverseJoinColumns = {@JoinColumn(name = "hashtagid")})
-    private List<Hashtags> hashtags;
+    public List<Hashtags> usedHashtags;
 
+    public List<Hashtags> getUsedHashtags() {
+        return usedHashtags;
+    }
 
-}
+    public void setUsedHashtags(List<Hashtags> usedHashtags) {
+        this.usedHashtags = usedHashtags;
+    }
+}   // End of class
