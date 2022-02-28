@@ -2,7 +2,7 @@ package app.dto;
 
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 public class Posts {
@@ -30,7 +30,13 @@ public class Posts {
     @JoinTable(name = "posts_hashtags",
             joinColumns = {@JoinColumn(name = "postid")},
             inverseJoinColumns = {@JoinColumn(name = "hashtagid")})
-    private List<Hashtags> hashtags;
+    private ArrayList<Integer> usedHashtags;
 
+    public ArrayList<Integer> getUsedHashtags() {
+        return usedHashtags;
+    }
 
+    public void setUsedHashtags(ArrayList<Integer> usedHashtags) {
+        this.usedHashtags = usedHashtags;
+    }
 }

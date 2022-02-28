@@ -59,11 +59,19 @@ public class HashtagController {
 
         // find # and store into array
         for (String word : words) {
-            Character firstChar = word.charAt(0);
+            // catch error
+            Character firstChar;
+            try{
+                firstChar = word.charAt(0);
+            }
+            catch(Exception e){
+                continue;
+            }
+
 
             // check for #
-            if (firstChar.equals("#")) {
-                word = word.replace("#","");    // eliminates #
+            if (firstChar.equals('#')) {
+                word = word.substring(1);    // eliminates #
                 word = word.trim(); // eliminates leading and trailing spaces
                 hashtags.add(word); // add hashtag to arraylist
             }   //End of if
@@ -97,13 +105,19 @@ public class HashtagController {
             }   // end of else
             // get id and add to arraylist
 
-
         }   // End of for each loop
         return hashIds;
     }   // End of checkHash
 
     // Add postid + each hashtagid to bridge table
-    public void addPostHash(Posts post, ArrayList<Integer> hashIds){
+    /*
+    The parameters given are a single post and the list of hashtags ids
+    within that post. Thus, the post id is the same for each row to be
+    added to the bridge table for every single instance this method is called.
+     */
+    public void addPostHash(Posts post, ArrayList<Integer> hashIds){    // parameters are the hashtags in a given post
+       // add hashtags list property to post
+        post.setUsedHashtags(hashIds);
 
     }   // End of addPostHash
 
