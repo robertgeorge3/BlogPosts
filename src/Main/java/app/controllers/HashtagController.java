@@ -41,6 +41,7 @@ public class HashtagController {
 
     // Parse all posts ONCE when program starts
     public void startUp() {
+        System.out.println("test");
         for (int id = 1; id <= postDao.count(); id++) {
             Long lId = Integer.toUnsignedLong(id);
             findHash(postDao.getById(lId));  // find hashtags in a post
@@ -50,6 +51,7 @@ public class HashtagController {
 
     // Search 1 post for hashtags and return a list
     public ArrayList<String> findHash(Posts post) {
+        System.out.println("test");
         // create arraylist to store hashtags
         ArrayList<String> hashtags = new ArrayList<String>();
 
@@ -76,37 +78,37 @@ public class HashtagController {
             }   //End of if
         }   // End of for loop
 
-        for(String s : hashtags){
-            System.out.println(s);
-            Hashtags ht = new Hashtags(s);
-            post.addTag(ht);
-        }
-
-        postDao.save(post);
+        System.out.println("test");
         // check hashtag table and add if new
-       /* ArrayList<Integer> hashIds = checkHash(hashtags);
+        ArrayList<Hashtags> hashArr = checkHash(hashtags);
+
+
+
 
         // create bridge table entry
-        addPostHash(post, hashIds);*/
+        addPostHash(post, hashArr);
 
         // return array of hashtags
         return hashtags;
     }
     // For each hashtag in list, check-add to hashtag table
-    public ArrayList<Integer> checkHash(ArrayList<String> hashtags){
+    public ArrayList<Hashtags> checkHash(ArrayList<String> hashtags){
         // create arraylist to hold hashIds
-        ArrayList<Integer> hashIds = new ArrayList<Integer>();
+        ArrayList<Hashtags> hashIds = new ArrayList<>();
 
         for (String phrase : hashtags) {
             // check if it exists
             if (hashtagDao.existsHashtagByPhrase(phrase)){
                 // if yes, continue
-                continue;
+                Hashtags hashtag = hashtagDao.getHashtagByPhrase(phrase);
+                hashIds.add(hashtag);
             // if no, add to DB
             }   // end of if
             else {
                 Hashtags hashtag = new Hashtags(phrase);
+                System.out.println(phrase);
                 hashtagDao.save(hashtag);
+                hashIds.add(hashtag);
 
             }   // end of else
             // get id and add to arraylist
@@ -117,7 +119,14 @@ public class HashtagController {
     }   // End of checkHash
 
     // Add postid + each hashtagid to bridge table
-    public void addPostHash(Posts post, ArrayList<Integer> hashIds){
+    public void addPostHash(Posts post, ArrayList<Hashtags> hashes){
+        for(Hashtags ht : hashes){
+            post.addTag(ht);
+        }
+
+        postDao.save(post);
+
+
 
     }   // End of addPostHash
 

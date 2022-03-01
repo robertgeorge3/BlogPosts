@@ -9,5 +9,7 @@ public interface HashtagRepository extends JpaRepository<Hashtags, Long> {
 
     Boolean existsHashtagByPhrase(String phrase);
 
+    Hashtags getHashtagByPhrase(String phrase);
+
     //Hashtags getHashtagByPhrase(String phrase);
 }
