@@ -48,6 +48,7 @@ public class PostController {
     public String newPost(String description) {
         System.out.println(description);
         Posts post = new Posts(description);
+        hashController.findHash(post);  // handle hashtag side of database for new post
         postRepository.save(post);
         hashController.findHash(post);
         return "redirect:/getPosts";
