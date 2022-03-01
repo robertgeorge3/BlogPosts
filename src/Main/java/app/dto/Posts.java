@@ -17,7 +17,7 @@ public class Posts {
 
     private String content;
 
-    public long getPostid() {
+    public Long getPostid() {
         return postid;
     }
 

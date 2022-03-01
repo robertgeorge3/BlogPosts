@@ -11,4 +11,6 @@ import javax.persistence.PersistenceContext;
 @Repository
 public interface PostRepository extends JpaRepository<Posts, Long> {
 
+
+
 }

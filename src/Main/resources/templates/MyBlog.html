@@ -11,6 +11,27 @@
 </h1>
     <input type=button onClick="location.href='/'"
             value='Home'>
+
+        </div><div class="col-7 text-center m-3">
+        <form action="searchBlog" method="POST">
+            <div class="form-group row">
+                <label for="search" class="col-3 col-form-label">
+                    Filter by Hashtag</label>
+                <div class="col-9">
+                    <input type="text" name="search"
+                           id="search" class="form-control"/>
+                </div>
+                <center></center>
+                </p>
+            </div>
+        </form>
+    </div>
+        <form  action="getPosts" method="GET">
+            <button onclick="">
+                Refresh
+            </button>
+        </form>
+
     </center>
 
 

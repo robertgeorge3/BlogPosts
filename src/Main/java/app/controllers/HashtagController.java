@@ -41,7 +41,6 @@ public class HashtagController {
 
     // Parse all posts ONCE when program starts
     public void startUp() {
-        System.out.println("test");
         for (int id = 1; id <= postDao.count(); id++) {
             Long lId = Integer.toUnsignedLong(id);
             findHash(postDao.getById(lId));  // find hashtags in a post
@@ -51,7 +50,6 @@ public class HashtagController {
 
     // Search 1 post for hashtags and return a list
     public ArrayList<String> findHash(Posts post) {
-        System.out.println("test");
         // create arraylist to store hashtags
         ArrayList<String> hashtags = new ArrayList<String>();
 
@@ -78,13 +76,8 @@ public class HashtagController {
             }   //End of if
         }   // End of for loop
 
-        System.out.println("test");
         // check hashtag table and add if new
         ArrayList<Hashtags> hashArr = checkHash(hashtags);
-
-
-
-
         // create bridge table entry
         addPostHash(post, hashArr);
 
