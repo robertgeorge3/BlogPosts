@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface HashtagRepository extends JpaRepository<Hashtags, Integer> {
+public interface HashtagRepository extends JpaRepository<Hashtags, Long> {
 
     Boolean existsHashtagByPhrase(String phrase);
 }
