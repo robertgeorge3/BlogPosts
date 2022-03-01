@@ -25,7 +25,7 @@ public class Posts {
         return content;
     }
 
-    protected Posts(){}
+    public Posts(){}
 
     public Posts(String content){
         this.content = content;
@@ -57,6 +57,9 @@ public class Posts {
         this.postid = id;
     }
 
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     @Override
     public boolean equals(Object o) {
