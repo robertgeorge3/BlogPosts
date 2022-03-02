@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
 
+
+    // add password
     @PostMapping("/addPassword")
     public String getPassword(String password, Model model) {
         if (password.equals("Hello123")) {

@@ -29,15 +29,6 @@ public class PostController {
         return "Index.html";
     }
 
-
-
-
-
-    @GetMapping("/Test")
-    public List<Posts> findall(){
-        return postRepository.findAll();
-    }
-
     @GetMapping("getPosts")
     public String displayHeroes(Model model) {
         model.addAttribute("getPosts",postRepository.findAll());

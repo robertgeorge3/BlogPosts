@@ -88,7 +88,6 @@ class PostRepositoryTest {
     public void testCount() {
         // create post object
         Posts post = new Posts();
-        post.setId(1L);
         post.setContent("test content");
 
         // add to DB
@@ -99,7 +98,6 @@ class PostRepositoryTest {
 
         // create 2nd post object
         Posts post2 = new Posts();
-        post2.setId(2L);
         post2.setContent("test content2");
 
         // add to DB
