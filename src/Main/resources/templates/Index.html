@@ -29,15 +29,21 @@
             <label for="password" class="col-3 col-form-label">
                 Enter Password</label>
             <div class="col-9">
-                <input type="text" name="password"
+                <input type="password" name="password"
                        id="password" class="form-control"/>
             </div>
-            <p th:text =${incorrectPassword}>
+            <p th:text =${incorrectPassword} class = "form-reply">
                 <center></center>
             </p>
         </div>
     </form>
 </div>
+
+<style>
+    .form-reply{
+    text-align:center;
+    }
+</style>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

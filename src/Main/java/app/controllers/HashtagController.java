@@ -28,11 +28,6 @@ public class HashtagController {
     @Autowired
     PostRepository postDao;
 
-    /*@Autowired
-    public PostController(PostRepository postDao) {
-        this.postDao = postDao;
-    }   // End of constructor*/
-
 
     @GetMapping("findall")
     public List<Hashtags> findAll() {

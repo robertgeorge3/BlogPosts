@@ -41,11 +41,6 @@ class PostRepositoryTest {
         // fill with information
         //post.setId(1L);
 
-        /*
-        strange errors where setId() is not equal to getPostid().
-        Probably an error to do with auto generated keys.
-        */
-
         post.setContent("Test content");
         // save to DB
         postDao.save(post);

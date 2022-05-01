@@ -47,9 +47,9 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="post : ${getPosts}">
-                <td th:text="${post.postid}"></td>
-                <td th:text="${post.content}"></td>
+            <tr th:each="p : ${getPosts}">
+                <td th:text="${p.postid}"></td>
+                <td th:text="${p.content}"></td>
 
             </tr>
             </tbody>

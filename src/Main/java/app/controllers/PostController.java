@@ -30,7 +30,7 @@ public class PostController {
     }
 
     @GetMapping("getPosts")
-    public String displayHeroes(Model model) {
+    public String displayPosts(Model model) {
         model.addAttribute("getPosts",postRepository.findAll());
         return "MyBlog.html";
     }

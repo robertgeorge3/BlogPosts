@@ -20,6 +20,7 @@ public class Hashtags {
 
     public Hashtags(String phrase){this.phrase = phrase;
     }   // end of constructor
+
     @ManyToMany(mappedBy = "postHashtags")
     private Set<Posts> hashtagPosts = new HashSet<>();
 
